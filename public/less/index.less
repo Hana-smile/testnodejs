@@ -1,0 +1,54 @@
+#main-content{
+	height:100%;
+	width:100%;
+	overflow:hidden;
+	position:absolute;
+}
+#timeline{
+	position: absolute;
+	top: 50%;
+	right: 0;
+	.timeline-point{
+		width: 8px;
+		height: 8px;
+		background: black;
+		display: block;
+		position: relative;
+		border-radius: 50%;
+		margin:20px auto;
+		&:hover,&:focus{
+			border: 1px solid #222222;
+			background: transparent;
+			height: 14px;
+			width: 14px;
+		}
+	}
+}
+#view-holder{
+	height:100%;
+	.view{
+		height:100%;
+		overflow: hidden;
+		width:100%;
+	}
+}
+#todo{
+	height:100%;
+	background: url("/images/banner.jpg") no-repeat center;
+	overflow: hidden;
+	width:100%;
+
+}
+#second{
+	position: relative;
+	background-color: #242831;
+}
+#third{
+	background-color: #6f87ab;
+}
+#fourth{
+	background-color: #48EACB;
+}
+#last{
+	background-color: #EA9E48;
+}

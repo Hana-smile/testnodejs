@@ -13,7 +13,10 @@ var app = express();
 app.set('port', process.env.PORT || 3000);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+//app.set('view engine', 'jade');
+app.engine('.html',require('ejs').renderFile);
+app.set('view engine','html');
+
 
 app.use(favicon());
 app.use(logger('dev'));
@@ -26,23 +29,23 @@ app.use('/', routes);
 app.use('/users', users);
 
 
-var mysql = require('mysql');
-var conn = mysql.createConnection({
+/*var mysql = require('mysql');*/
+/*var conn = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'root',
     database:'nodejs',
     port: 3306
 });
-conn.connect();
+conn.connect();*/
 
-var insertSQL = 'insert into t_user(name) values("conan"),("fens.me")';
-var selectSQL = 'select * from t_user limit 10';
-var deleteSQL = 'delete from t_user';
-var updateSQL = 'update t_user set name="conan update"  where name="conan"';
-
+/*//var insertSQL = 'insert into t_user(name) values("conan"),("fens.me")';
+//var selectSQL = 'select * from t_user limit 10';
+//var deleteSQL = 'delete from t_user';
+//var updateSQL = 'update t_user set name="conan update"  where name="conan"';
+*/
 //delete
-conn.query(deleteSQL, function (err0, res0) {
+/*conn.query(deleteSQL, function (err0, res0) {
     if (err0) console.log(err0);
     console.log("DELETE Return ==> ");
     console.log(res0);
@@ -81,7 +84,7 @@ conn.query(deleteSQL, function (err0, res0) {
         });
     });
 });
-
+*/
 //conn.end();
 
 /// catch 404 and forward to error handler

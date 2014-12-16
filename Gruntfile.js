@@ -4,7 +4,8 @@ module.exports = function(grunt){
 			compileLogin: {
 				option:{ },
 				files: {
-					'public/css/login.css':'public/less/login.less'
+					'public/css/login.css':'public/less/login.less',
+					'public/css/index.css':'public/less/index.less'
 				}
 			},
 			minify : {
